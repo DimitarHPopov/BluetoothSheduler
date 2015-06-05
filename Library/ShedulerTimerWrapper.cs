@@ -63,6 +63,7 @@ namespace Library
 
         private void NextPool(DateTime dt, bool start)
         {
+            // записване на следващият път когато ще трябва да се пусне БТ
             var pools = Library.FileWorker.LoadFromFile<List<NextPool>>(Enums.PoolsrFile, new List<NextPool>());
            
             var existedPoolForTimer = pools.Where(p => p.TimerGuid == _sheduler.Guid).FirstOrDefault();
